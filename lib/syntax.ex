@@ -69,7 +69,7 @@ defmodule DIDemo.Syntax do
   end
 end
 
-DIDemo.Syntax.hungry?()
+#DIDemo.Syntax.hungry?()
 
 # Steps to building a taco
 # hungry? - > yes or no

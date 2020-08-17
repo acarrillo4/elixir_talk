@@ -1,0 +1,9 @@
+class Friendly
+  def init(args)
+    @name = args
+  end
+end
+
+a = Friendly.new("amy") # object Object Oriented Programming
+a.name
+> "amy"
