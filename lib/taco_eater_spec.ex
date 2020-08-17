@@ -25,7 +25,7 @@ defmodule DiDemo.TacoEater do
 
 
 
-
+ # Let's add a guard to the function head.
  def eat(tacos) when is_list(tacos) do
   List.pop_at(tacos, -1)
  end
