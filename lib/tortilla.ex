@@ -11,6 +11,6 @@ defmodule DiDemo.Tortilla do
    %Tortilla{type: type, warm: true}
   end
 
-  def warm_up(type), do: :error
+  def warm_up(type), do: {:error, "Sorry, #{type} is not a real tortilla type. That's just disrespectful"}
 
 end

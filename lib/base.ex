@@ -9,5 +9,5 @@ defmodule DiDemo.Base do
     %Base{type: type}
   end
 
-  def add(type), do: {:error, "Sorry, #{type} is not a base"}
+  def add(type), do: {:error, "Sorry, we don't make #{type} tacos"}
 end
