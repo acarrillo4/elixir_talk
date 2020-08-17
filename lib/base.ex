@@ -5,9 +5,9 @@ defmodule DiDemo.Base do
 
   @valid_bases ["asada", "pastor", "fajitas", "veggies"]
 
-  def add_base(type) when type in @valid_bases do
+  def add(type) when type in @valid_bases do
     %Base{type: type}
   end
 
-  def add_base(_), do: :error
+  def add(type), do: {:error, "Sorry, #{type} is not a base"}
 end

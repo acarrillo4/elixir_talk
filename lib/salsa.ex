@@ -1,6 +1,6 @@
 defmodule DiDemo.Salsa do
-  defstruct type: nil, spice: nil
   alias DiDemo.Salsa
+  defstruct type: nil, spice: nil
 
   @valid_types ["green", "red"]
   @valid_spice ["mild", "hot", "melt_your_face"]
