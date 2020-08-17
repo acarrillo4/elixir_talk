@@ -8,9 +8,8 @@ defmodule DiDemo.Tortilla do
   Warms up a tortilla, returns a %Tortilla{} struct.
   """
   def warm_up(type) when type in @valid_types do
-   %Tortilla{type: type, warm: true}
+    %Tortilla{type: type, warm: true}
   end
 
   def warm_up(type), do: {:error, "Sorry, #{type} is not a real tortilla type. That's just disrespectful"}
-
 end
