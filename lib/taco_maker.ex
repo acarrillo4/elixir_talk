@@ -10,13 +10,14 @@ defmodule DiDemo.TacoMaker do
     with [base, tortilla, salsa_type, salsa_spice] <- grab_ingredients(order),
          %TacoBase{} = taco_base <- TacoBase.add(base),
          %Salsa{} = salsa <- Salsa.add(salsa_type, salsa_spice),
-         %Tortilla{} = tortilla <- Tortilla.warm_up(tortilla) do
+         %Tortilla{warm: true} = tortilla <- Tortilla.warm_up(tortilla) do
       %Taco{
         base: taco_base,
         salsa: salsa,
         tortilla: tortilla
       }
     else
+      %Tortilla{warm: false} -> IO.puts("Who eats cold tacos? This isn't pizza")
       error -> IO.inspect(error)
     end
   end
