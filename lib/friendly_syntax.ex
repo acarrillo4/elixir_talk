@@ -1,15 +1,29 @@
-defmodule DIDemo.FriendlySyntax do
-  @available_attribute "value"
+defmodule DiDemo.FriendlySyntax do
+  @moduledoc """
+  A moduledoc provides documentation for the current module.
+  """
+
+  # Custom attributes are most commonly used as constants in Elixir, making the value more visible and reusable.
+  @custom_attribute "some_value"
+
+  @doc """
+  A doc provides documentation for the function that follows the attribute.
+  """
 
   def i_am_public do
-    #function with arity 0 - meaning # of arguments
+    @custom_attribute
+    # i_am_public/0
+    # this is a public function with an arity of 0 - meaning it takes no arguments
   end
 
   def i_am_public(name) do
-    # function with arity 1
+    # i_am_public/1
+    # this is a public function with an arity of 1
   end
 
   defp i_am_private(name) do
-    # private function
+    # i_am_private/1
+    # this is a private function with an arity of 1
+    # unlike public functions, private functions can only be called from within their own module
   end
 end
