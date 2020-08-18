@@ -18,16 +18,21 @@ defmodule DIDemo.Syntax do
     response =
       IO.gets("Are you hungry? (yes/no)")
       |> standardize_input()
-        # |> String.downcase()
-        # |> String.trim()
 
-      case response do
-        "yes" -> taco_time()
-        "no" -> IO.puts("Need to write something_to_drink?()")
-          _ ->
-            IO.puts("That's not the answer I was looking for...let's try this again")
-            hungry?()
-      end
+    # |> String.downcase()
+    # |> String.trim()
+
+    case response do
+      "yes" ->
+        taco_time()
+
+      "no" ->
+        IO.puts("Need to write something_to_drink?()")
+
+      _ ->
+        IO.puts("That's not the answer I was looking for...let's try this again")
+        hungry?()
+    end
   end
 
   def taco_time() do
@@ -36,8 +41,10 @@ defmodule DIDemo.Syntax do
   end
 
   def tortilla_preference() do
-    tortilla_preference = IO.gets("What's your tortilla preference? ")
-    |> standardize_input()
+    tortilla_preference =
+      IO.gets("What's your tortilla preference? ")
+      |> standardize_input()
+
     # |> String.downcase()
     # |> String.trim()
 
@@ -64,12 +71,12 @@ defmodule DIDemo.Syntax do
 
   def standardize_input(input) do
     input
-      |> String.downcase()
-      |> String.trim()
+    |> String.downcase()
+    |> String.trim()
   end
 end
 
-#DIDemo.Syntax.hungry?()
+# DIDemo.Syntax.hungry?()
 
 # Steps to building a taco
 # hungry? - > yes or no

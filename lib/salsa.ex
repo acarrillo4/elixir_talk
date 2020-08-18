@@ -10,11 +10,11 @@ defmodule DiDemo.Salsa do
   end
 
   def add(type) when type in @valid_types do
-   %Salsa{type: type, spice: "mild"}
+    %Salsa{type: type, spice: "mild"}
   end
 
   def add(_type) do
-   %Salsa{type: "green", spice: "mild"}
+    %Salsa{type: "green", spice: "mild"}
   end
 
   def add(type, spice) do

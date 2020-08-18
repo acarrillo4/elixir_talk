@@ -1,5 +1,4 @@
 defmodule DIDemo.Functional do
-
   @moduledoc """
   tacos = ["asada", "pastor", "fajitas", "veggie"]
 
@@ -17,5 +16,4 @@ defmodule DIDemo.Functional do
   iex(11)> {eaten, tacos} = List.pop_at(tacos, -1)
   {"veggie", ["asada", "pastor", "fajitas"]}
   """
-
 end
