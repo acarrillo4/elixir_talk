@@ -1,7 +1,7 @@
 defmodule DiDemo.BulkMaker do
   alias DiDemo.IngredientSample
 
-  @timeout 5_000
+  @timeout 10_000
 
   def make_sync(count) do
     start = DateTime.utc_now()
@@ -35,7 +35,7 @@ defmodule DiDemo.BulkMaker do
   def make_sanely(count) do
     IngredientSample.random(count)
     |> Enum.map(fn order -> get_worker(order) end)
-    |> Enum.each(fn task -> await_and_inspect(task) end)
+    |> Enum.each(fn task -> Task.await(task, @timeout) end)
   end
 
   defp get_worker(order) do
@@ -50,12 +50,6 @@ defmodule DiDemo.BulkMaker do
 
   defp make_order(order) do
     %{order: order}
-  end
-
-  defp await_and_inspect(task) do
-    task
-    |> Task.await(@timeout)
-    |> IO.inspect()
   end
 
   defp log_time(start) do
